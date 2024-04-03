@@ -6,15 +6,43 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed = 5f;
 
+    Animator ani;
+    public Transform pos = null;
+    public GameObject bullet;
+
     void Start()
     {
-        
+        ani = GetComponent<Animator>();
+
     }
 
     void Update()
     {
         float moveX = moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
         float moveY = moveSpeed * Time.deltaTime * Input.GetAxis("Vertical");
+
+        //-1 0 1
+        if (Input.GetAxis("Horizontal") <= -0.5f)
+            ani.SetBool("left", true);
+        else
+            ani.SetBool("left", false);
+
+        if (Input.GetAxis("Horizontal") >= 0.5f)
+            ani.SetBool("right", true);
+        else
+            ani.SetBool("right", false);
+
+        if (Input.GetAxis("Vertical") >= 0.5f)
+            ani.SetBool("up", true);
+        else
+            ani.SetBool("up", false);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //프리팹 위치 방향 생성
+            GameObject pBullet = Instantiate(bullet,pos.position, Quaternion.identity);
+            pBullet.transform.parent = pos;
+        }
 
         transform.Translate(moveX, moveY, 0);
 
