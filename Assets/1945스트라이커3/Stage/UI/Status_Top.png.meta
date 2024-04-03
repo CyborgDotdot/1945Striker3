@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 945021434139d534b9bbffce3a3df051
+guid: c2d5af325ed508e4f95c1b7c4f773bb5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 21
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -149,13 +149,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Item_Bomb_0
+      name: Status_Top_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 184
+        width: 760
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef31fd32950d4074eaf3e8a3053b6cdb
+      internalID: 529792297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_Top_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 760
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517994a72818d6a4caac78676b301bc2
+      internalID: 1596811049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_Top_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 54
-        height: 32
+        width: 760
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,71 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d04e4660e7a15a4c9fbd0524c0da8ea
-      internalID: 425427052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Item_Bomb_1
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 0
-        width: 54
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6462066b616ce7648bb47857ce9b736d
-      internalID: 1757566444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Item_Bomb_2
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 0
-        width: 54
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d0687849bc14ae46a071a7e82551d9a
-      internalID: -818755148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Item_Bomb_3
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 0
-        width: 54
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 375cf2689dafcc940818dcb18f65ea91
-      internalID: -2023244602
+      spriteID: 0456711d9e8a4b948984b7c9889fe674
+      internalID: 637281569
       vertices: []
       indices: 
       edges: []
@@ -243,10 +222,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Item_Bomb_0: 425427052
-      Item_Bomb_1: 1757566444
-      Item_Bomb_2: -818755148
-      Item_Bomb_3: -2023244602
+      Status_Top_0: 529792297
+      Status_Top_1: 1596811049
+      Status_Top_2: 637281569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

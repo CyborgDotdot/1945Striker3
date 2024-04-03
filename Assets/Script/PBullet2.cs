@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PBullet1 : MonoBehaviour
+public class PBullet2 : MonoBehaviour
 {
     public float speed = 4.0f;
     private Monster monster;
@@ -18,7 +18,7 @@ public class PBullet1 : MonoBehaviour
     {
         if (other.CompareTag("Monster"))
         {
-            monster.TakeDamage(1);
+            monster.TakeDamage(3);
             Destroy(gameObject);
         }
     }
