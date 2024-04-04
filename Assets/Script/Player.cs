@@ -15,8 +15,12 @@ public class Player : MonoBehaviour
     private Monster monster;
 
     public GameObject effect;
+    public GameObject powerUpEffect;
+
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+
+    bool isFiring = false;
 
     void Start()
     {
@@ -52,8 +56,16 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //프리팹 위치 방향 생성
-            Instantiate(bullets[currentBulletIndex], pos.position, Quaternion.identity);
+            // 프리팹 반복 생성
+            isFiring = true;
+            StartCoroutine(FireBullets());
+        }
+
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            //프리팹 생성 중단
+            isFiring = false;
+            StopCoroutine(FireBullets());
         }
 
         transform.Translate(moveX, moveY, 0);
@@ -64,11 +76,17 @@ public class Player : MonoBehaviour
         Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos);//다시월드좌표로 변환
         transform.position = worldPos;
     }
+
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Monster"))
         {
-            monster.TakeDamage(3);
+            Monster monster = other.GetComponent<Monster>(); // 충돌한 오브젝트로부터 Monster 컴포넌트를 가져옴
+            if (monster != null)
+            {
+                monster.TakeDamage(3);
+            }
         }
     }
 
@@ -90,13 +108,34 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         spriteRenderer.color = originalColor;
     }
+
+    IEnumerator FireBullets()
+    {
+        while (isFiring) // isFiring 플래그가 true인 동안에만 반복
+        {
+            // 현재 인덱스의 총알 프리팹 생성
+            Instantiate(bullets[currentBulletIndex], pos.position, Quaternion.identity);
+            // 지정된 간격만큼 대기
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
     public void PowerUp()
     {
         currentBulletIndex++;
+
+        if (currentBulletIndex < bullets.Length)
+        {
+            GameObject Effect = Instantiate(powerUpEffect, transform.position, Quaternion.identity);
+            Effect.transform.parent = pos;
+            Destroy(Effect, 1);
+        }
 
         if (currentBulletIndex >= bullets.Length)
         {
             currentBulletIndex = bullets.Length - 1;
         }
+
+
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class ItemPower : MonoBehaviour
 {
     public float moveSpeed = 3.0f;
-    public GameObject effect;
     private Player player;
 
     void Start()

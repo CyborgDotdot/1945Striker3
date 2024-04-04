@@ -14,7 +14,7 @@ public class Monster : MonoBehaviour
     public GameObject bullet;
     public GameObject item;
 
-    private int monsterHP = 3;
+    public int monsterHP = 3;
     private Player player;
 
     public GameObject effect;
@@ -58,6 +58,7 @@ public class Monster : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (this == null) return;
         monsterHP -= damage;
         StartCoroutine(FlashRed());
         if (monsterHP <= 0)
@@ -65,7 +66,7 @@ public class Monster : MonoBehaviour
             GameObject Effect = Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(Effect, 1);
 
-            Instantiate(item, ms1.position, Quaternion.identity);
+            ItemDrop();
 
             Destroy(gameObject);
         }
@@ -77,6 +78,10 @@ public class Monster : MonoBehaviour
         spriteRenderer.color = originalColor;
     }
 
+    public void ItemDrop()
+    {
+        Instantiate(item, transform.position, Quaternion.identity);
+    }
     public void OnBecameInvisible()
     {
         Destroy(gameObject);

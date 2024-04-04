@@ -7,6 +7,7 @@ TagManager:
   - Monster
   - PlayerBullet
   - MonsterBullet
+  - Boss
   layers:
   - Default
   - TransparentFX

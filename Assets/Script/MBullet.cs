@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class MBullet1 : MonoBehaviour
+public class MBullet : MonoBehaviour
 {
     public float speed = 3.0f;
+    public int damage;
     private Player player;
 
     void Start()
@@ -18,7 +19,7 @@ public class MBullet1 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            player.TakeDamage(1);
+            player.TakeDamage(damage);
             Destroy(gameObject);
         }
     }
