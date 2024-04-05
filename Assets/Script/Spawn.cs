@@ -13,7 +13,7 @@ public class Spawn : MonoBehaviour
     private GameObject[] monsters;
     bool swi1 = true;
     bool swi2 = true;
-
+    private bool bossSpawned = false;
 
     void Start()
     {
@@ -57,12 +57,23 @@ public class Spawn : MonoBehaviour
     {
         swi2 = false;
         StopCoroutine("RandomSpawn2");
+    }
 
-        //보스몬스터
+    public void BossSpawn()
+    {
+        Instantiate(monsters[2], transform.position, Quaternion.identity);
     }
 
     void Update()
     {
-        
+        if (!swi2 && !bossSpawned)
+        {
+            int monsterCount = GameObject.FindGameObjectsWithTag("Monster").Length;
+            if (monsterCount <= 0)
+            {
+                bossSpawned = true;
+                BossSpawn();
+            }
+        }
     }
 }

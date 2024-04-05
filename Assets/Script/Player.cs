@@ -5,20 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public int maxHealth = 100;
-    private int currentHealth;
 
     Animator ani;
     public static Transform pos;
     public GameObject[] bullets; // 배열로 bullet 저장
     private int currentBulletIndex = 0; // 현재 사용 중인 bullet의 인덱스
-    private Monster monster;
-
-    public GameObject effect;
-    public GameObject powerUpEffect;
-
-    private SpriteRenderer spriteRenderer;
-    private Color originalColor;
 
     bool isFiring = false;
 
@@ -26,11 +17,6 @@ public class Player : MonoBehaviour
     {
         ani = GetComponent<Animator>();
         pos = transform;
-        currentHealth = maxHealth;
-        monster = FindObjectOfType<Monster>();
-
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        originalColor = spriteRenderer.color;
     }
 
     void Update()
@@ -77,36 +63,9 @@ public class Player : MonoBehaviour
         transform.position = worldPos;
     }
 
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Monster"))
-        {
-            Monster monster = other.GetComponent<Monster>(); // 충돌한 오브젝트로부터 Monster 컴포넌트를 가져옴
-            if (monster != null)
-            {
-                monster.TakeDamage(3);
-            }
-        }
-    }
-
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        StartCoroutine(FlashRed());
-        if (currentHealth <= 0)
-        {
-            GameObject Effect = Instantiate(effect, transform.position, Quaternion.identity);
-            Destroy(Effect, 1);
-
-            Destroy(gameObject);
-        }
-    }
-    IEnumerator FlashRed()
-    {
-        spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = originalColor;
+        GameManager.instance.TakeDamage(damage);
     }
 
     IEnumerator FireBullets()
@@ -126,16 +85,12 @@ public class Player : MonoBehaviour
 
         if (currentBulletIndex < bullets.Length)
         {
-            GameObject Effect = Instantiate(powerUpEffect, transform.position, Quaternion.identity);
-            Effect.transform.parent = pos;
-            Destroy(Effect, 1);
+            GameManager.instance.PowerUpEffect(transform.position);
         }
 
         if (currentBulletIndex >= bullets.Length)
         {
             currentBulletIndex = bullets.Length - 1;
         }
-
-
     }
 }

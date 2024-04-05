@@ -4,6 +4,7 @@ public class PBullet : MonoBehaviour
 {
     public float speed = 4.0f;
     public int damage;
+    public GameObject effect;
 
     void Start()
     {
@@ -23,14 +24,20 @@ public class PBullet : MonoBehaviour
             {
                 monster.TakeDamage(damage);
             }
-            else
+            GameObject _effect = Instantiate(effect, transform.position, Quaternion.identity);
+            Destroy(_effect, 1);
+            Destroy(gameObject);
+        }
+        if (other.CompareTag("Boss"))
+        {
+            Boss boss = other.GetComponent<Boss>();
+            if (boss != null)
             {
-                Boss boss = other.GetComponent<Boss>();
-                if (boss != null)
-                {
-                    boss.TakeDamage(damage);
-                }
+                boss.TakeDamage(damage);
             }
+            GameObject _effect = Instantiate(effect, transform.position, Quaternion.identity);
+            Destroy(_effect, 1);
+
             Destroy(gameObject);
         }
     }

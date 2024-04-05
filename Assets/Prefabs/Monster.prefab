@@ -209,11 +209,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  Delay: 0.5
+  Delay: 1
   ms1: {fileID: 5119743249716835955}
   ms2: {fileID: 5491133572106660856}
   bullet: {fileID: 5368835404808878599, guid: 060a97a722ec76c4f8c4bc4a929cd060, type: 3}
   item: {fileID: 1375967038174426995, guid: ac80f8c338f151b46b054b744b0b8c07, type: 3}
+  monsterHP: 3
   effect: {fileID: 854838891493049405, guid: 8dc7397882e4f8b40ababbf900472205, type: 3}
 --- !u!50 &4601088551826594095
 Rigidbody2D:

@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  Delay: 0.8
+  Delay: 1
   ms1: {fileID: 8609020278765019072}
   ms2: {fileID: 4777770527324723501}
   bullet: {fileID: 2167216251801683564, guid: 3b90f3d2fa6603d438a267729ac4cb23, type: 3}

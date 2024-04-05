@@ -173,3 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   damage: 4
+  effect: {fileID: 854838891493049405, guid: 8dc7397882e4f8b40ababbf900472205, type: 3}

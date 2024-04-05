@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 21
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -153,11 +153,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 184
-        width: 760
-        height: 92
+        y: 230
+        width: 76
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,12 +173,12 @@ TextureImporter:
       name: Status_Top_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 92
-        width: 760
-        height: 92
+        x: 500
+        y: 230
+        width: 260
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: Status_Top_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 760
-        height: 92
+        x: 350
+        y: 230
+        width: 76
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,6 +207,195 @@ TextureImporter:
       bones: []
       spriteID: 0456711d9e8a4b948984b7c9889fe674
       internalID: 637281569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_Top_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 184
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c2e84ad7b31924989f9ab736af9c8e
+      internalID: -687244880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_Top_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 138
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f894b2f70ad7d43bf0c114190cadc3
+      internalID: -1816658662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_Top_5
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 138
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b457d622171f8bb4ea510c7026c1aa30
+      internalID: 693310346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_Top_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5578cab8c26de504a8ad52099fdc8ed0
+      internalID: 1179100366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_Top_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 46
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99416bc225146894e9716178c628ed3e
+      internalID: -2102786979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_Top_9
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 46
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2270a712fe9841446bba40f4380ee2db
+      internalID: 568308024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_Top_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8fba2934c9d27489ee041f8dd3d143
+      internalID: 383333584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_Top_6
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 138
+        width: 260
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97a15bc5b5420045bdb8f080671e275
+      internalID: 1391939637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_Top_11
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 260
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91fc9a5e6a085444a8b1ec881f4c6484
+      internalID: 1223229912
       vertices: []
       indices: 
       edges: []
@@ -224,7 +413,19 @@ TextureImporter:
     nameFileIdTable:
       Status_Top_0: 529792297
       Status_Top_1: 1596811049
+      Status_Top_10: 383333584
+      Status_Top_11: 2030414566
+      Status_Top_13: -800998884
+      Status_Top_14: 1732821233
+      Status_Top_17: -558130879
       Status_Top_2: 637281569
+      Status_Top_3: -687244880
+      Status_Top_4: -1816658662
+      Status_Top_5: 693310346
+      Status_Top_6: 1391939637
+      Status_Top_7: 1179100366
+      Status_Top_8: -2102786979
+      Status_Top_9: 568308024
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
