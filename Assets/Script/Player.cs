@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public float moveSpeed = 5f;
 
     Animator ani;
-    public static Transform pos;
+    public Transform pos;
     public GameObject[] bullets; // 배열로 bullet 저장
     private int currentBulletIndex = 0; // 현재 사용 중인 bullet의 인덱스
 
-    bool isFiring = false;
+    public GameObject lazer;
+    public float gValue = 0;
+    public Image Gage;
 
     void Start()
     {
@@ -42,16 +45,30 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // 프리팹 반복 생성
-            isFiring = true;
-            StartCoroutine(FireBullets());
+            Instantiate(bullets[currentBulletIndex], pos.position, Quaternion.identity);
         }
 
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKey(KeyCode.Space))
         {
-            //프리팹 생성 중단
-            isFiring = false;
-            StopCoroutine(FireBullets());
+            gValue += Time.deltaTime;
+            Gage.fillAmount = gValue;
+
+            if(gValue >= 1)
+            {
+                GameObject go = Instantiate(lazer, pos.position, Quaternion.identity);
+                Destroy(go, 1);
+                gValue = 0;
+            }
+        }
+
+        else
+        {
+            gValue -= Time.deltaTime;
+            if(gValue <= 0)
+            {
+                gValue = 0;
+            }
+            Gage.fillAmount = gValue;
         }
 
         transform.Translate(moveX, moveY, 0);
@@ -66,17 +83,6 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         GameManager.instance.TakeDamage(damage);
-    }
-
-    IEnumerator FireBullets()
-    {
-        while (isFiring) // isFiring 플래그가 true인 동안에만 반복
-        {
-            // 현재 인덱스의 총알 프리팹 생성
-            Instantiate(bullets[currentBulletIndex], pos.position, Quaternion.identity);
-            // 지정된 간격만큼 대기
-            yield return new WaitForSeconds(0.2f);
-        }
     }
 
     public void PowerUp()

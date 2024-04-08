@@ -28,12 +28,18 @@ public class Boss : MonoBehaviour
 
     void Start()
     {
+        Invoke("Hide", 3);
         StartCoroutine(BossMissle());//코루틴 실행
         StartCoroutine(UniqueMissle());//코루틴 실행
         StartCoroutine(CircleFire());//코루틴 실행
 
 
         player = FindObjectOfType<Player>();
+    }
+    void Hide()
+    {
+        //보스 텍스트 객체이름 검색해서 찾기
+        GameObject.Find("TextBossWarning").SetActive(false);
     }
 
     IEnumerator BossMissle()

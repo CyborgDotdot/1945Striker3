@@ -15,6 +15,13 @@ public class Spawn : MonoBehaviour
     bool swi2 = true;
     private bool bossSpawned = false;
 
+    [SerializeField]
+    GameObject textBossWarning;
+
+    private void Awake()
+    {
+        textBossWarning.SetActive(false);
+    }
     void Start()
     {
         StartCoroutine("RandomSpawn1");
@@ -61,6 +68,7 @@ public class Spawn : MonoBehaviour
 
     public void BossSpawn()
     {
+        textBossWarning.SetActive(true);
         Instantiate(monsters[2], transform.position, Quaternion.identity);
     }
 
